@@ -1,5 +1,6 @@
 package de.tdlabs.keycoak.ext.storage.demo;
 
+import com.google.auto.service.AutoService;
 import com.google.common.collect.Lists;
 import lombok.extern.jbosslog.JBossLog;
 import org.keycloak.Config;
@@ -12,6 +13,7 @@ import org.keycloak.storage.UserStorageProviderFactory;
 import java.util.List;
 
 @JBossLog
+@AutoService(UserStorageProviderFactory.class)
 public class DemoUserStorageProviderFactory implements UserStorageProviderFactory<DemoUserStorageProvider> {
 
   @Override
