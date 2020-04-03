@@ -57,7 +57,7 @@ public class DemoUserStorageProvider implements UserStorageProvider,
     }
 
     UserCredentialModel cred = (UserCredentialModel) input;
-    return repository.validateCredentials(user.getUsername(), cred.getValue());
+    return repository.validateCredentials(user.getUsername(), cred.getChallengeResponse());
   }
 
   @Override
@@ -70,7 +70,7 @@ public class DemoUserStorageProvider implements UserStorageProvider,
     }
 
     UserCredentialModel cred = (UserCredentialModel) input;
-    return repository.updateCredentials(user.getUsername(), cred.getValue());
+    return repository.updateCredentials(user.getUsername(), cred.getChallengeResponse());
   }
 
   @Override
